@@ -1,5 +1,6 @@
 from aws_cdk import (
     aws_s3 as _s3,
+    aws_iam as _iam,
     core
 )
 
@@ -23,6 +24,10 @@ class MyFirstCdkProjectStack(core.Stack):
             self,
             "myBucketId1"
         )
+
+        print(mybucket.bucket_name)
+
+        _iam.Group(self,"gid")
 
         output_1 = core.CfnOutput(
             self,
